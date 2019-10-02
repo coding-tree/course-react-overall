@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bulma';
-import Tasks from './001/Tasks';
-import Users from './001/Users';
+import Tasks from './fetch/Tasks';
+import Users from './fetch/Users';
 
 import styles from './app.module.scss';
 
