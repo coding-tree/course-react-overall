@@ -1,19 +1,17 @@
 import React from 'react';
 import 'bulma';
-import Home from './components/Home';
-import Users from './components/Users';
-import styles from './app.module.scss';
+import Tasks from './001/Tasks';
+import Users from './001/Users';
 
-const tasks = 'http://www.mocky.io/v2/5d94b4672f000058008ff914';
-const users = 'http://www.mocky.io/v2/5d9488522f000067008ff7b7';
+import styles from './app.module.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1 className="title">Hello World</h1>
+      <h1 className="title">Higher Order Components Examples</h1>
       <header className={styles.container}>
-        <Home url={tasks}></Home>
-        <Users url={users}></Users>
+        <Tasks />
+        <Users />
       </header>
     </div>
   );
