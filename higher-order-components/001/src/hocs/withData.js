@@ -1,14 +1,24 @@
 import React, {useState, useEffect} from 'react';
 
 export const withData = url => Component => {
-  return props => {
+  return () => {
     const [data, setData] = useState([]);
+    const abortController = new AbortController();
+
     useEffect(() => {
-      fetch(url)
+      fetch(url, {signal: abortController.signal})
         .then(resp => resp.json())
-        .then(data => setData(data));
+        .then(data => setData(data))
+        .catch(err => {
+          if (err.name === 'AbortError') return;
+          throw new Error(err);
+        });
+
+      return () => {
+        return abortController.abort();
+      };
     }, []);
 
-    return <Component data={data} {...props}></Component>;
+    return <Component data={data}></Component>;
   };
 };

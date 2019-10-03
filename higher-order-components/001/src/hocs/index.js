@@ -1,2 +1,4 @@
 export * from './withData';
-export * from './withWrapper';
+export * from './withDecorator';
+export * from './withFunctionality';
+export * from './withAuthorize';
