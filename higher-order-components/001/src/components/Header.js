@@ -25,6 +25,9 @@ function Header() {
             <NavLink className="navbar-item" exact activeClassName="is-active" to="/connect-hocs">
               Connect hocs
             </NavLink>
+            <NavLink className="navbar-item" exact activeClassName="is-active" to="/local-storage">
+              Local Storage
+            </NavLink>
           </div>
         </nav>
       </div>

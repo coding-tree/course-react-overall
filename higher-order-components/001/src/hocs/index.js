@@ -4,3 +4,4 @@ export * from './withFunctionality';
 export * from './withAuthorize';
 export * from './withSyntax';
 export * from './withToggle';
+export * from './withLocalStorage';
