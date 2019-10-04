@@ -1,9 +1,11 @@
 import React from 'react';
 import {withFuncionality} from '../hocs';
+import styles from './personTwo.module.scss';
+import cx from 'classnames';
 
 function PersonTwo({name, setName}) {
   return (
-    <div>
+    <div className={cx(['box', styles.personTwo])}>
       <h1 className="title">Person Two</h1>
       <div>
         <p>Your name is: {name}</p>

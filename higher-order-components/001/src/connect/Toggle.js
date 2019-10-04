@@ -3,7 +3,7 @@ import {withAuthorize} from '../hocs';
 import cx from 'classnames';
 import {withToggle} from '../hocs/withToggle';
 
-function Toggle({isAuth, toggleAuth, isVisible, setVisibility}) {
+function Toggle({isAuth, toggleAuth, isVisible, toggleVisibility}) {
   const loginClass = cx('button is-dark', {
     'is-warning': isAuth,
   });
@@ -12,10 +12,16 @@ function Toggle({isAuth, toggleAuth, isVisible, setVisibility}) {
       <h1 className="title">Try to show your name without login</h1>
       <div>
         <p>Authorized: {isAuth.toString()}</p>
-        <button className={loginClass} onClick={() => toggleAuth(!isAuth)}>
+        <button
+          className={loginClass}
+          onClick={() => {
+            toggleAuth(!isAuth);
+            toggleVisibility(false);
+          }}
+        >
           {isAuth ? 'Wyloguj się' : 'Zaloguj się'}
         </button>
-        <button disabled={!isAuth} className="button is-primary" onClick={() => setVisibility(true)}>
+        <button disabled={!isAuth} className="button is-primary" onClick={() => toggleVisibility(!isVisible)}>
           Show your name
         </button>
         {isAuth ? (

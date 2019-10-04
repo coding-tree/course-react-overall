@@ -3,7 +3,7 @@ import {withFuncionality} from '../hocs';
 
 function PersonOne({name, setName}) {
   return (
-    <div>
+    <div className="box">
       <h1 className="title">Person One</h1>
       <div>
         <p>Your name is: {name}</p>

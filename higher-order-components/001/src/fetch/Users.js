@@ -3,7 +3,7 @@ import {withData} from '../hocs';
 
 function Users({data}) {
   return (
-    <div>
+    <div className="box">
       <h1 className="title">Users Component</h1>
       <h2 className="title is-size-5">
         This data comes from <code>withData</code> HOC

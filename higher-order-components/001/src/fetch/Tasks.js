@@ -5,7 +5,7 @@ import cx from 'classnames';
 
 function Tasks({data}) {
   return (
-    <div>
+    <div className="box">
       <h1 className={cx(['title', styles.header])}>Tasks Component</h1>
       <h2 className="title is-size-5">
         This data comes from <code>withData</code> HOC
